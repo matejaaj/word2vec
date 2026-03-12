@@ -41,23 +41,15 @@ $$
 Then the gradients for one training example are:
 
 $$
-\frac{\partial L}{\partial v_c}
-=
-(\sigma(s_{pos}) - 1)u_o
-+
-\sum_{k=1}^{K} \sigma(s_{neg,k})u_{n_k}
+\frac{\partial L}{\partial v_c} = (\sigma(s_{pos}) - 1)u_o + \sum_{k=1}^{K} \sigma(s_{neg,k})u_{n_k}
 $$
 
 $$
-\frac{\partial L}{\partial u_o}
-=
-(\sigma(s_{pos}) - 1)v_c
+\frac{\partial L}{\partial u_o} = (\sigma(s_{pos}) - 1)v_c
 $$
 
 $$
-\frac{\partial L}{\partial u_{n_k}}
-=
-\sigma(s_{neg,k})v_c
+\frac{\partial L}{\partial u_{n_k}} = \sigma(s_{neg,k})v_c
 $$
 
 These are exactly the updates used in `SkipGramNegativeSampling.train_step()`:
